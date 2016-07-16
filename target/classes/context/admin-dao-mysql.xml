@@ -13,13 +13,13 @@
     <!-- 数据源配置 -->
     <bean id="mysqlDataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
         <!-- 驱动名称 -->
-        <property name="driverClassName" value="${mall.mysql.driverClassName:com.mysql.jdbc.Driver}" />
+        <property name="driverClassName" value="com.mysql.jdbc.Driver" />
         <!-- JDBC连接串 -->
-        <property name="url" value="${mall.mysql.url:jdbc:mysql://172.16.233.242:3306}/paas_open?useUnicode=true&amp;characterEncoding=UTF-8&amp;zeroDateTimeBehavior=convertToNull&amp;transformedBitIsBoolean=true" />
+        <property name="url" value="jdbc:mysql://127.0.0.1:3306/young?useUnicode=true&amp;characterEncoding=UTF-8&amp;zeroDateTimeBehavior=convertToNull&amp;transformedBitIsBoolean=true" />
         <!-- 数据库用户名称 -->
-        <property name="username" value="${mall.mysql.username:admin}" />
+        <property name="username" value="root" />
         <!-- 数据库密码 -->
-        <property name="password" value="${mall.mysql.password:admin}" />
+        <property name="password" value="root" />
         <!-- 连接池最大使用连接数量 -->
         <property name="maxActive" value="${mall.mysql.pool.maxActive:30}" />
         <!-- 初始化大小 -->

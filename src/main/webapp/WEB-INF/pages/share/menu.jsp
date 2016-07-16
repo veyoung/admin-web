@@ -9,10 +9,10 @@
         </h4>
         <ul class="navi first">
             <li class="dropdown" data-id="/order/place">
-				<a href="${path}/order/place" class="stateful"><i class="fa fa-angle-double-right img-icon"></i>新建订单页</a>
+				<a href="/admin/order/place" class="stateful"><i class="fa fa-angle-double-right img-icon"></i>新建订单页</a>
 			</li>
             <li class="dropdown" data-id="/order/draft">
-                <a href="${path}/order/draft" class="stateful"><i class="fa fa-angle-double-right img-icon"></i>草稿箱</a>
+                <a href="/admin/order/draft" class="stateful"><i class="fa fa-angle-double-right img-icon"></i>草稿箱</a>
             </li>
         </ul>
     </li>
@@ -23,7 +23,7 @@
         </h4>
         <ul class="navi second">
             <li class="dropdown" data-id="/order/list">
-				<a href="${path}/order/list" class="stateful"><i class="fa fa-angle-double-right img-icon"></i>订单列表页</a>
+				<a href="/admin/order/list" class="stateful"><i class="fa fa-angle-double-right img-icon"></i>订单列表页</a>
 			</li>
         </ul>
     </li>
@@ -35,7 +35,7 @@
         </h4>
         <ul class="navi third">
             <li class="dropdown" data-id="/authority">
-				<a href="${path}/authority" class="stateful"><i class="fa fa-angle-double-right img-icon"></i>管理员权限</a>
+				<a href="/admin/authority" class="stateful"><i class="fa fa-angle-double-right img-icon"></i>管理员权限</a>
 			</li>
         </ul>
     </li>

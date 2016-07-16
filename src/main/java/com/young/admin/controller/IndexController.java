@@ -13,23 +13,35 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping(value = "/")
 public class IndexController extends BaseController {
 	private static Logger LOGGER = LoggerFactory.getLogger(IndexController.class);
-	String INDEX_PAGE = "index";
 
     @RequestMapping(method = RequestMethod.GET)
     public String index(HttpServletRequest request, Model model) {
         return "index";
     }
     
-	/**
-	 * 需要登陆访问，用于登陆返回
-	 * 
-	 * @param request
-	 * @param model
-	 * @return
-	 */
     @RequestMapping(value = "/index", method = RequestMethod.GET)
     public String indexNeedLogin(HttpServletRequest request) {
+        return "index";
+    }
+    
+    @RequestMapping(value = "/order/place", method = RequestMethod.GET)
+    public String orderPlace(HttpServletRequest request) {
+        return "admin/placeOrder";
+    }
+    
+    @RequestMapping(value = "/order/draft", method = RequestMethod.GET)
+    public String orderDraft(HttpServletRequest request) {
     	LOGGER.debug("/index");
-        return INDEX_PAGE;
+        return "admin/draftOrderList";
+    }
+    
+    @RequestMapping(value = "/order/list", method = RequestMethod.GET)
+    public String orderList(HttpServletRequest request) {
+        return "admin/orderList";
+    }
+    
+    @RequestMapping(value = "/authority", method = RequestMethod.GET)
+    public String authority(HttpServletRequest request) {
+        return "admin/authority";
     }
 }

@@ -15,10 +15,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="bookmark" href="http://yun.glodon.com/isv">
     <link rel="shortcut icon" type="image/x-icon" href="//static.glodon.com/open/resources/images/favicon.ico"/>
-    <link rel="stylesheet" type="text/css" href="//static.glodon.com/open/zcm/pages/css/merge/common.merge.css">
+    <link rel="stylesheet" type="text/css" href="//static.glodon.com/open/admin/pages/css/merge/common.merge.css">
     <t:importAttribute name="cssPath"/>
     <c:if test='${not empty cssPath}'>
-  	<link rel="stylesheet" type="text/css" href="//static.glodon.com/open/zcm/pages/css/merge/${cssPath}.merge.css">
+  	<link rel="stylesheet" type="text/css" href="//static.glodon.com/open/admin/pages/css/merge/${cssPath}.merge.css">
 	</c:if>
     <script>
         window.visitor = {
@@ -43,21 +43,19 @@
     </div>
     <div class="mod-nav">
 			<div class="nav-wrap">	
-				
-					<ol class="nav-user">
-						<li class="user-logo"><a class="logo" href="${path}"></a></li>
-						<li class="user-name">							
-								<span>&nbsp;&nbsp;</span> 
-								<a class="logout" href="${path}/logout">退出</a>
-						</li>
-					</ol>
-				
+				<ol class="nav-user">
+					<li class="user-logo"><a class="logo" href="${path}"></a></li>
+					<li class="user-name">							
+							<span>&nbsp;&nbsp;</span> 
+							<a class="logout" href="${path}/logout">退出</a>
+					</li>
+				</ol>
 			</div>
 	</div>
-    <script src="//static.glodon.com/open/zcm/pages/js/merge/common.merge.js"></script>
+    <script src="//static.glodon.com/open/admin/pages/js/merge/common.merge.js"></script>
     <t:importAttribute name="jsPath" />
 	<c:if test='${not empty jsPath}'>
-		<script src="//static.glodon.com/open/zcm/pages/js/merge/${jsPath}.merge.js"></script>
+		<script src="//static.glodon.com/open/admin/pages/js/merge/${jsPath}.merge.js"></script>
 	</c:if>
 </body>
 </html>
