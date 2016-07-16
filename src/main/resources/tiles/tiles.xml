@@ -1,0 +1,27 @@
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    <definition name="login" template="/WEB-INF/pages/login.jsp">
+        <put-attribute name="title" value="广联达-招财猫"/>
+        <put-attribute name="cssPath" value="login"/>
+        <put-attribute name="jsPath" value="login"/>
+    </definition>
+    <definition name="menu">
+        <put-attribute name="menu" value="/WEB-INF/pages/share/menu.jsp" />
+    </definition>
+    <definition name="index" template="/WEB-INF/pages/share/layout.jsp" extends="menu">
+        <put-attribute name="title" value="广联达-招财猫"/>
+        <put-attribute name="content" value="/WEB-INF/pages/placeOrder.jsp"/>
+        <put-attribute name="cssPath" value="placeOrder"/>
+        <put-attribute name="jsPath" value="placeOrder"/>
+    </definition>
+    <definition name="zcm/*" template="/WEB-INF/pages/share/layout.jsp" extends="menu">
+    	<put-attribute name="title" value="广联达-招财猫"/>
+        <put-attribute name="content" value="/WEB-INF/pages/{1}.jsp"/>
+        <put-attribute name="cssPath" value="{1}"/>
+        <put-attribute name="jsPath" value="{1}"/>
+    </definition>
+    
+    <definition name="test" template="/WEB-INF/pages/test.jsp" />
+    <definition name="error" template="/WEB-INF/pages/error2.jsp" />
+</tiles-definitions>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<configuration scan="true" scanPeriod="60 seconds" debug="true">
+	<property name="PROJECT_NAME" value="zcm" />
+    <property name="PAAS_LOG_DIR" value="/data/logs/paas" />
+    <property name="log.root.level" value="debug" />
+    <property name="log.sql.level" value="debug" />
+	<property name="log.appender" value="FILE" /><!-- STDOUT 或 FILE -->
+    
+    <property file="${user.home}/paas/default.properties"/>
+    <property file="${user.home}/paas/zcm.properties" />
+     
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5p %logger{36} [%file:%line] - %m%n</pattern>
+		</encoder>
+	</appender>
+
+	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<File>${PAAS_LOG_DIR}/${PROJECT_NAME}.log</File>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5p %logger{36} [%file:%line] - %m%n</pattern>
+		</encoder>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${PAAS_LOG_DIR}/${PROJECT_NAME}/${PROJECT_NAME}_%d{yyyy-MM-dd}.log</fileNamePattern>
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+	</appender>
+	<appender name="TASK_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<File>${PAAS_LOG_DIR}/${PROJECT_NAME}_task.log</File>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5p %logger{36} [%file:%line] - %m%n</pattern>
+		</encoder>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${PAAS_LOG_DIR}/${PROJECT_NAME}/${PROJECT_NAME}_task_%d{yyyy-MM-dd}.log</fileNamePattern>
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+	</appender>
+	
+	<!-- 用于兼容老的配置 -->
+	<appender name="logfile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<File>${PAAS_LOG_DIR}/${PROJECT_NAME}.log</File>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5p %logger{36} [%file:%line] - %m%n</pattern>
+		</encoder>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${PAAS_LOG_DIR}/${PROJECT_NAME}/${PROJECT_NAME}_%d{yyyy-MM-dd}.log</fileNamePattern>
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+	</appender>
+	 
+    <logger name="org" level="WARN"/>
+    <logger name="com" level="WARN"/>
+    <logger name="net" level="WARN"/>
+	<logger name="com.glodon.paas" level="${log.root.level}"/>
+    <logger name="com.glodon.paas.mall.zcm" level="${log.root.level}"/>
+    <logger name="com.glodon.paas.mall.mapper" level="${log.sql.level}"/>
+    <logger name="java.sql" level="${log.sql.level}"/>
+    
+    <!-- <logger name="org.mybatis.spring" level="DEBUG"/> -->
+	<!--定时任务日志配置  -->
+	<logger name="com.glodon.paas.mall.zcm.task" level="info" additivity="false">  
+	    <appender-ref ref="TASK_FILE" /> 
+	    <appender-ref ref="STDOUT" />  
+	</logger> 
+	
+	<!-- TRACE < DEBUG < INFO < WARN < ERROR -->	 
+	<root level="${log.root.level}">
+		<appender-ref ref="${log.appender}" />
+	</root>
+</configuration>

@@ -1,0 +1,20 @@
+
+#wsdl
+zcm.wsdl.location=wsdl/prod
+
+#glodon-paas-dubbo
+paas.dubbo.registry.address=${paas.dubbo.registry.address}
+
+#glodon-zcm-mysql
+mall.mysql.url                 = ${mall.mysql.url}
+mall.mysql.username            = ${mall.mysql.username}
+mall.mysql.password            = ${mall.mysql.password}
+mall.mysql.password.decrypt    = ${mall.mysql.password.decrypt}
+
+#glodon-paas-redis
+redis.host=${redis.host}
+redis.port=${redis.port}
+redis.pool.maxActive=${redis.pool.maxActive}
+redis.pool.maxIdle=${redis.pool.maxIdle}
+redis.pool.maxWait=${redis.pool.maxWait}
+redis.pool.testOnBorrow=${redis.pool.testOnBorrow}

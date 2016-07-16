@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config description="glodon-zcm"> 
+	<group name="common">
+	     <property name="zcm.wsdl.location" defaultValue="wsdl/prod" description="生产环境wsdl文件目录" />
+		 <property name="paas.dubbo.registry.address" defaultValue="paas.dubbo.registry.address" description="dubbo注册地址" />
+	</group>
+                               
+	<group name="glodon-zcm-mysql">
+	     <property name="mall.mysql.url" defaultValue="jdbc:mysql://172.16.233.242:3306" description="" />
+		 <property name="mall.mysql.username" defaultValue="paasdbadmin" description="" />
+		 <property name="mall.mysql.password" defaultValue="paasdbadmin" description="" />
+		 <property name="mall.mysql.password.decrypt" defaultValue="false" description="" />
+	</group>
+	
+	<group name="glodon-paas-redis">
+	     <property name="redis.host" defaultValue="redis.b.glodon.org" description="" />
+		 <property name="redis.port" defaultValue="6379" description="" />
+		 <property name="redis.pool.maxActive" defaultValue="2" description="" />
+		 <property name="redis.pool.maxIdle" defaultValue="20" description="" />
+		 <property name="redis.pool.maxWait" defaultValue="1000" description="" />
+		 <property name="redis.pool.testOnBorrow" defaultValue="true" description="" />
+	</group>   
+
+	<script>
+		<!-- <generate template="/WEB-INF/classes/logback.xml"></generate> -->
+        <generate template="auto-config.properties.vm" destfile="/WEB-INF/classes/auto-config.properties" charset="UTF-8" />
+	</script>
+
+</config>
